@@ -37,6 +37,7 @@ var compressedRequest = function(options, callback) {
 }
 
 compressedRequest({url: "http://google.com", headers: headers}, function(err, data) {
-  if (err) console.log(err);
-  else console.log(data);
-})
+  if (err) return console.log(err);
+  console.log("Response length: " + data.length);
+  console.log("First few bytes: " + data.slice(0, 100));
+});

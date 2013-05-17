@@ -1,4 +1,4 @@
-exports.headers = {
+module.exports = {
   "accept-charset" : "ISO-8859-1,utf-8;q=0.7,*;q=0.3",
   "accept-language" : "en-US,en;q=0.8",
   "accept" : "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",

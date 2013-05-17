@@ -11,6 +11,7 @@ var compressedRequest = function(options, outStream) {
     if (res.statusCode !== 200) throw new Error('Status not 200');
  
     var encoding = res.headers['content-encoding'];
+    console.log("Encoding: " + encoding);
     if (encoding == 'gzip') {
       res.pipe(zlib.createGunzip()).pipe(outStream);
     } else if (encoding == 'deflate') {
@@ -24,7 +25,7 @@ var compressedRequest = function(options, outStream) {
     throw err;
   })
 }
- 
+
 // Dummy write stream. Substitute with any other writeable stream
 var outStream = fs.createWriteStream('./sample.html');
 compressedRequest({url: "http://google.com", headers: headers}, outStream);
